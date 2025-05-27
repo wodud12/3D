@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slide</title>
+    <link rel="stylesheet" href="slide.css">
+</head>
+<body>
+    <div class="slideContainer">
+        <div class="slideWrap">
+            <div class="slide">
+                <p>슬라이드 1</p>
+                <a href="#">
+                <img src="asstes/images/slide01.png" alt="슬라이드1">
+                </a>
+            </div>
+            <div class="slide">
+                <p>슬라이드 2</p>
+                <a href="#">
+                <img src="asstes/images/slide01.png" alt="슬라이드2">
+                </a>
+            </div>
+            <div class="slide">
+                <p>슬라이드 3</p>
+                <a href="#">
+                <img src="asstes/images/slide01.png" alt="슬라이드3">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    //    setInterval(function(){
+    //        $('.slideWrap').animate({
+    //            'margin-left':'-100%'
+    //        },function(){
+    //            $('.slide').first().appendTo('.slideWrap');
+    //            $('.slideWrap').css({'margin-left':'0%'})
+    //        })
+    //    },3000)
+
+    window.onload = function(){
+        const slideWrap = document.querySelector('.slideWrap');
+        setInterval(function(){
+            slideWrap.style.transition = 'margin-left 0.5s';
+            slideWrap.style.marginLeft = '-100%';
+            setTimeout(function(){
+                const firstSlide = slideWrap.querySelector('.slide');
+                slideWrap.appendChild(firstSlide);
+
+                slideWrap.style.transition = 'none';
+                slideWrap.style.marginLeft = '0%';
+            },3000);
+        },1000)
+    }
+    </script>
+</body>
+</html>

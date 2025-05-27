@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 300px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        img{
+            width: 100%;
+        }
+        button{
+            margin: 10px;
+            padding: 5px 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img id="slide" src="asstes/images/slide01.png" alt="슬라이드 이미지">
+        <div class="btn">
+            <button class="prev">이전</button>
+            <button class="next">다음</button>
+        </div>
+    </div>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script>
+        const images = [
+            'assets/images/slide01.png',
+            'assets/images/slide02.png',
+            'assets/images/slide03.png',
+        ]
+
+        let current = 0;
+
+        // function showSlide(index){
+        //     $('#slide').attr('src',images[index]);
+        // }
+        function showSlide(index){
+            document.getElementById('.slide').src=images[index];
+        }
+        // function next(){
+        //     current = (current+1)%images.length;
+        //     showSlide(current);
+        // }
+        function next(){
+            current = (current+1)%images.length;
+            showSlide(current);
+        }
+        // function prev(){
+        //      current = (current-1)%images.length;
+        //      showSlide(current);
+        // }
+        function prev(){
+            current = (current-1) % images.length;
+            showSlide(current);
+        }
+        // $(document).ready(function(){
+        //     $('.next').on('click',function(){
+        //         next()
+        //     })
+        //     $('.prev').on('click',function(){
+        //         prev()
+        //     })
+        // });
+        document.addEventListener('.DOMcontentLoaded',function(){
+            document.querySelector('.next'),addEventListener('click',next);
+            
+            document.querySelector('.prev'),addEventListener('click',prev);
+            showSlide(current);
+
+        })
+    </script>
+</body>
+</html>

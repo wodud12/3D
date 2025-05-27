@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.slideContainer{
+    height: 300px;
+    overflow: hidden;
+}
+.slideWrap{
+    width: 300%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slide{
+    position: relative;
+    float: left;
+}
+.slide p{
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    color: #fff;
+}

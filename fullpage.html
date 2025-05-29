@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.17/fullpage.css" />
+   
+    <style>
+        .fq-watermark{
+            display: none !important;
+        }
+        .sec02{
+            background: url('assets/images/slide01.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            width: 100%;
+
+        }
+    </style>
+ 
+</head>
+<body>
+    <div id="fullpage">
+        <div class="section">Section 1</div>
+        <div class="section sec02">
+            Section 2
+        </div>
+        <div class="section">Section 3</div>
+        <div class="section">Section 4</div>
+    </div>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.17/fullpage.js"></script>
+     <script>
+        new fullpage('#fullpage',{
+            sectionSeletor : '.section',
+            // 섹션을 선택자를 지정
+            scrollOverflow : true,
+            // 콘텐츠가 섹션 크기보다 큰 경우 스크롤링을 허용할 지 여부
+            navigation: true,
+            // 페이지 네비게이션을 사영할지 여부
+            scrollingSpeed: 1000,
+            // 스크롤 속도
+            responsiveWidth:900,
+            // 해당 크기 일 때 autoScroll 비활성화
+            parallax: true,
+            // 작은 화면에서 부드러운 스크롤링
+            css3: false,
+        })
+     </script>
+</body>
+</html>

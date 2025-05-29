@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/a-2.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>Green복지재단</h1>
+            </div>
+            <div class="sub-menu-bg"></div>
+            <nav>
+                <ul class="main-menu">
+                    <li><a href="#none">MENU-1</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">sub-MENU-1</a></li>
+                            <li><a href="#">sub-MENU-2</a></li>
+                            <li><a href="#">sub-MENU-3</a></li>
+                            <li><a href="#">sub-MENU-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#none">MENU-2</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">sub-MENU-1</a></li>
+                            <li><a href="#">sub-MENU-2</a></li>
+                            <li><a href="#">sub-MENU-3</a></li>
+                            <li><a href="#">sub-MENU-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#none">MENU-3</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">sub-MENU-1</a></li>
+                            <li><a href="#">sub-MENU-2</a></li>
+                            <li><a href="#">sub-MENU-3</a></li>
+                            <li><a href="#">sub-MENU-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#none">MENU-4</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">sub-MENU-1</a></li>
+                            <li><a href="#">sub-MENU-2</a></li>
+                            <li><a href="#">sub-MENU-3</a></li>
+                            <li><a href="#">sub-MENU-4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        $(function(){
+            $('.main_menu').mouseover(function(){
+                $('.sub-menu , .sub-menu-bg').stop().slideDown();
+            })
+            $('.main_menu').mouseleave(function(){
+                $('.sub-menu , .sub-menu-bg').stop().slideUp();
+            })
+        })
+    </script>
+    
+</body>
+</html>

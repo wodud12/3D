@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/nav_js2.css">
+</head>
+<body>
+    <div class="section">
+        <div class="parallax-element background"></div>
+        <div class="parallax-element square"></div>
+        <div class="parallax-element circle"></div>
+        <strong class="parallax-element title">텍스트는 빠르게<br>배경은 천천히</strong>
+    </div>
+    <div class="extra-content">
+        <p>Parallax Scrolling</p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script>
+
+        $(window).on('scroll',function(){
+            let scroll = $(this).scrollTop();
+
+            $('.title').css('transform','scale('+scroll*0.1+'px)');
+            $('.background').css('transform','translateY('+scroll*0.1+'px)');
+            // const $sections = $('.section');
+            // const $backgorund = $sections.find('.backgorund');
+            // const $title = $sections.find('.title');
+            // const $circle = $sections.find('.circle');
+            // const $square = $sections.find('.square');
+
+            // const scrolled = $(window).scrollTop();
+            // $backgorund.css('transform',`translateY(${scrolled * 0.8}px)`);
+            // $title.css('transform',`scale(${scrolled * 0.01})`);
+            // $square.css('transform',`translate(${scrolled * -0.5}px,${scrolled * 0.5}px)`);
+        })
+
+
+
+        // window.addEventListener('scroll',function(){
+        //     const sections = document.querySelector('.section');
+        //     //  섹션
+        //     const background = sections.querySelector('.background');
+        //     //  배경
+        //     const title = sections.querySelector('.title');
+        //     //  글자
+        //     const circle = sections.querySelector('.circle');
+        //     //  원
+        //     const square = sections.querySelector('.square');
+        //     //  사각형
+
+        //     const scrolled = window.screenY
+        //     //  윈도우 스크롤 값
+
+        //     console.log("스크롤 값 :" + scrolled);
+
+        //     background.style.transform = `translateY(${scrolled * 0.8}px)`;
+
+        //     title.style.transform = `scale(${scrolled * 0.01})`;
+
+        //     circle.style.transform = `translate(${scrolled}px, ${scrolled}px)`;
+
+        //     square.style.transform = `translate(${scrolled * -0.5}px,${scrolled * 0.5}px)`;
+
+        // })
+    </script>
+</body>
+</html>

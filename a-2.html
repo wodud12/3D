@@ -50,18 +50,105 @@
                 </ul>
             </nav>
         </header>
+        <!-- header end -->
+
+        <section class="slide">
+            <div class="slider-wrap">
+                <ul class="slider">
+                    <li>슬라이드1</li>
+                    <li>슬라이드2</li>
+                    <li>슬라이드3</li>
+                </ul>
+            </div>
+        </section>
+            <!-- slider end -->
+
+        <section class="contents">
+            <div class="content">
+                <h3>공지사항</h3>
+                <ul class="notice-list">
+                    <li><a href="#none">공지사항 1번입니다.</a><span>2023.08.13</span></li>
+                    <li><a href="#none">공지사항 2번입니다.</a><span>2023.08.13</span></li>
+                    <li><a href="#none">공지사항 3번입니다.</a><span>2023.08.13</span></li>
+                    <li><a href="#none">공지사항 4번입니다.</a><span>2023.08.13</span></li>
+                </ul>
+            </div>
+            <div class="content">
+                <h3>갤러리</h3>
+                <ul class="gallery-list">
+                    <li>이미지</li>
+                    <li>이미지</li>
+                    <li>이미지</li>
+                </ul>
+            </div>
+            <div class="content banner">
+                <div>베너</div>
+            </div>
+        </section>
+       <!-- content end -->
+        <footer>
+            <div class="footer-logo">
+                <h1>Green복지재단</h1>
+            </div>
+            <div class="copyright">Copyright Green복지재단 2023</div>
+            <div class="famliy">
+                <select name="site-list">
+                    <option value="#">패밀리사이트1</option>
+                    <option value="#">패밀리사이트2</option>
+                    <option value="#">패밀리사이트3</option>
+                </select>
+            </div>
+        </footer>
     </div>
+    <!-- container end -->
+
+    <div class="modal">
+        <div class="modal-wrap">
+            <h3>행운의 편지</h3>
+            <p> 이 편지는 영국에서 최초로 시작되어 일년에 한바퀴를 돌면서 받는 사람에게 행운을 주었고 지금은 당신에게로 옮겨진 이 편지는 4일 안에 당신 곁을 떠나야 합니다. 이 편지를 포함해서 7통을 행운이 필요한 사람에게 보내 주셔야 합니다. 복사를 해도 좋습니다. 혹 미신이라 하실지 모르지만 사실입니다.</p>
+            <button class="modal-close">닫기</button>
+        </div>
+    </div>
+    <div class="modal-bg"></div>
+
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <script>
         $(function(){
+            // modal
+            $('.notice-list li').eq(0).click(function(){
+                $('.modal, .modal-bg').css('display','block');
+            })
+            $('.modal-close').click(function(){
+                $('.modal, .modal-bg').css('display','none');
+            })
+
+            // main_menu
+
             $('.main_menu').mouseover(function(){
                 $('.sub-menu , .sub-menu-bg').stop().slideDown();
             })
             $('.main_menu').mouseleave(function(){
                 $('.sub-menu , .sub-menu-bg').stop().slideUp();
             })
+            let slideCount = 0;
+            function slideLeft(){
+                slideCount++;
+                if(slideCount ===3){
+                    slideCount = 0;
+                }
+                $('.slider').animate({
+                    left: slideCount * -1200 + "px"
+                },1000)
+            }
+            setInterval(slideLeft,3000)
+
         })
+
+        // menu
+
+        
     </script>
     
 </body>

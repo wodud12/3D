@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @charset "utf-8";
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');/* regular-400, medium-500, semibold-600, bold-700 */ 
+
+        body,html {height:100%;margin:0;padding:0;font-family:'pretendard'}
+        ul, li, dl, dt, dd, p, span{margin:0;padding:0}
+        a{text-decoration:none}
+        *, :after, :before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+
+        #atc03 .txt_wrap{display:flex;flex-direction:column;justify-content:center; align-items:flex-start;height:200vh;padding-left:30px;font-size:70px;font-weight:900;line-height:1.15;color:rgba(0,0,0,.2)}
+        #atc03 .txt_wrap p{position:relative;width:max-content;background:linear-gradient(to right, #000, #000) no-repeat;-webkit-background-clip:text;background-clip:text;background-size:0%;transition:background-size cubic-bezier(.1,.5,.5,1) 0.5s}
+        #atc03 .txt_wrap p.stroke{color:transparent;  -webkit-text-stroke:2px #000}
+
+        @media(max-width:1024px){
+        #atc03 .txt_wrap{font-size:60px}
+        }
+        @media(max-width:768px){
+        #atc03 .txt_wrap{font-size:44px}
+        }
+        @media(max-width:480px){
+        #atc03 .txt_wrap{font-size:34px}
+        }
+    </style>
+</head>
+<body>
+    <section id="inc03">
+        <div class="l_cont">
+            <div class="item cont01">
+                <dl class="txt_wrap">
+                    <dt data-aos="fade-up">Low Power Microcontroller</dt>
+                    <dd data-aos="fade-up" data-aos-delay="300">
+                        <p>저전력 마이크로컨트롤러</p>
+                        <div class="pl">저전력 소비와 뛰어난 성능을 결합한 마이크로컨트롤러로, 배터리 수명을 연장</div>
+                    </dd>
+                </dl>
+            </div>
+            <div class="item cont02">
+            </div>
+            <div class="item cont03">
+                <dl class="txt_wrap">
+                    <dt data-aos="fade-up">high-speed communication chipset</dt>
+                    <dd data-aos="fade-up" data-aos-delay="300">
+                        <p>고속 통신 칩셋</p>
+                        <div class="pl">빠른 데이터 전송 속도와 안정성을 제공하는 고속 통신 칩셋</div>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="r_cont">
+            <div class="item cont01">
+                
+            </div>
+            <div class="item cont02">
+                <dl class="txt_wrap">
+                    <dt data-aos="fade-up">High-density memory chips</dt>
+                    <dd data-aos="fade-up" data-aos-delay="300">
+                        <p>고밀도 메모리 칩</p>
+                        <div class="pl">작은 공간에 많은 데이터를 저장할 수 있는 고밀도 메모리 칩</div>
+                    </dd>
+                </dl>
+            </div>
+            <div class="item cont03">
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/EaselPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+
+    <script>
+        let panels = gap = gsap.utils.toArray('.item');
+
+        panels.forEach((panel,i)=>{
+            ScrollTrigger.create({
+                trigger: panels,
+                start: "top top",
+                pin: true,
+                scrub: 0.5,
+                pinSpacting: false,
+            })
+        })
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/gsap-6.css">
+</head>
+<body>
+    <article id="inc02">
+        <div class="inc02_wrap">
+            <ul class="tech_list">
+                <li class="tech_item">
+                    <div class="txt_cont">
+                        <span class="num">01</span>
+                        <div class="txt">
+                            <h3 class="p1">합성 mRNA 기술</h3>
+                            <p class="p1">합성 기술을 이용함 배신 타겟팅</p>
+                        </div>
+                    </div>
+                    <div class="img_cont">
+                        <img src="assets/images/Al.png" alt="합성mRNA">
+                    </div>
+                </li>
+                <li class="tech_item">
+                    <div class="txt_cont">
+                        <span class="num">02</span>
+                        <div class="txt">
+                            <h3 class="p1">합성 mRNA 기술</h3>
+                            <p class="p1">합성 기술을 이용함 배신 타겟팅</p>
+                        </div>
+                    </div>
+                    <div class="img_cont">
+                        <img src="assets/images/Al.png" alt="합성mRNA">
+                    </div>
+                </li>
+                <li class="tech_item">
+                    <div class="txt_cont">
+                        <span class="num">03</span>
+                        <div class="txt">
+                            <h3 class="p1">합성 mRNA 기술</h3>
+                            <p class="p1">합성 기술을 이용함 배신 타겟팅</p>
+                        </div>
+                    </div>
+                    <div class="img_cont">
+                        <img src="assets/images/Al.png" alt="합성mRNA">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </article>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/EaselPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+
+    <script>
+        gsap.registerPlugin(ScrollTigger);
+
+        let pinStart = 80;
+        let gap = 30;
+
+        $('$inc02 .tech_item').each(function(i,e){
+            ScrollTigger.create({
+                trigger: e,
+                start: `top += ${pinStart+i *gap}`,
+                endTrigger: "#inc02 , tech_item li"
+            })
+        })
+    </script>
+</body>
+</html>
